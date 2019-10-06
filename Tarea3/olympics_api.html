@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="id01"></div>
+
+    <script>
+
+        let url = 'https://private-anon-96b85886d8-olympicsapi.apiary-mock.com/scrape/athletes';
+
+        fetch(url, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify()
+            .then(respuesta => respuesta.json())
+            .then(respuesta =>
+                console.log(respuesta)
+        );
+
+    </script>
+</body>
+
+</html>
