@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="id01"></div>
+
+    <script>
+        if(document.cookie.length > 1){
+            console.log("Cookie Memo borrada")
+            document.cookie = "Memo; expires=Thu, 18 Dec 2000 12:00:00 UTC; path=/"
+        }else{
+            document.cookie = "Cookie Cool creada; expires=Thu, 18 Dec 2019 12:00:00 UTC; path=/"
+        }
+        let url = "http://swapi.apis.guru/";
+
+        fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: 'query {person(personID: 1) { name, birthYear, homeworld {name}} } ' }),
+        })
+            .then(respuesta => respuesta.json())
+            .then(respuesta =>
+                console.log(respuesta['data']['person'])
+        );
+
+    </script>
+</body>
+
+</html>
