@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="id01"></div>
+
+<script>
+
+let url = "http://api.nobelprize.org/v1/laureate.json?bornCountryCode=mx";
+
+fetch(url)
+.then(respuesta => respuesta.json())
+.then(function(data) {
+  console.log(data.laureates[2].surname)
+})
+.catch(function(error) {
+    console.log("ooops!!!" + error)
+});
+</script>
+</body>
+</html>

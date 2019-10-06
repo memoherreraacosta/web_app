@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="id01"></div>
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+
+(function() {
+  let url = "http://api.nobelprize.org/v1/laureate.json?bornCountryCode=mx";
+  $.getJSON( url)
+    .done(function( data ) {
+      data.laureates.forEach(element => {
+        console.log(element.firstname, element.id);
+      });
+    });
+})();
+</script>
+</script>
+</body>
+</html>
